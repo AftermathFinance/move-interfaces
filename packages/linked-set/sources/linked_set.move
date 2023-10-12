@@ -10,13 +10,6 @@ module linked_set::linked_set {
 		contents: sui::linked_table::LinkedTable<T0, linked_set::linked_set::Null>
 	}
 
-	fun null(
-		
-	): linked_set::linked_set::Null
-	{
-		abort 0
-	}
-
 	public fun empty<T0: copy+ drop+ store>(
 		_arg0: &mut sui::tx_context::TxContext
 	): linked_set::linked_set::LinkedSet<T0>
