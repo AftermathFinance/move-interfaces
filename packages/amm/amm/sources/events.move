@@ -39,12 +39,32 @@ module amm::events {
 		lp_coins_minted: u64
 	}
 
+	struct DepositEventV2 has copy, drop {
+		pool_id: ID,
+		issuer: address,
+		referrer: Option<address>,
+		types: vector<ascii::String>,
+		deposits: vector<u64>,
+		reserves: vector<u64>,
+		lp_coins_minted: u64,
+	}
+
 	struct WithdrawEvent has copy, drop {
 		pool_id: sui::object::ID,
 		issuer: address,
 		referrer: std::option::Option<address>,
 		types: vector<std::ascii::String>,
 		withdrawn: vector<u64>,
+		lp_coins_burned: u64
+	}
+
+	struct WithdrawEventV2 has copy, drop {
+		pool_id: ID,
+		issuer: address,
+		referrer: Option<address>,
+		types: vector<ascii::String>,
+		withdrawn: vector<u64>,
+		reserves: vector<u64>,
 		lp_coins_burned: u64
 	}
 
@@ -56,5 +76,16 @@ module amm::events {
 		amounts_in: vector<u64>,
 		types_out: vector<std::ascii::String>,
 		amounts_out: vector<u64>
+	}
+
+	struct SwapEventV2 has copy, drop{
+		pool_id: ID,
+		issuer: address,
+		referrer: Option<address>,
+		types_in: vector<ascii::String>,
+		amounts_in: vector<u64>,
+		types_out: vector<ascii::String>,
+		amounts_out: vector<u64>,
+		reserves: vector<u64>,
 	}
 }
