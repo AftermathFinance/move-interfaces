@@ -1,0 +1,20 @@
+[package]
+name = "MetaEth"
+edition = "2024"
+published-at = "0xccd628c2334c5ed33e6c47d6c21bb664f8b6307b2ac32c2462a61f69a31ebcee"
+# upgrade-cap = "0xee9e33248d97ac3573360c35375df83988b1b6fd7427888879b8b46f50892a68"
+
+# [objects]
+# coin-metadata = "0x10834983248da171721480aad79027d59af08bfb7dabacb0a54a999e8fc34775"
+# treasury-cap = "0xbf6a9f62568521a57f98eddf6ffb7ad5328ea2c04c7ba6b0d4ea385f184f623b"
+
+# [types]
+# meth = "0xccd628c2334c5ed33e6c47d6c21bb664f8b6307b2ac32c2462a61f69a31ebcee::meth::METH"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[addresses]
+meth = "0xccd628c2334c5ed33e6c47d6c21bb664f8b6307b2ac32c2462a61f69a31ebcee"

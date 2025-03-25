@@ -1,0 +1,20 @@
+[package]
+name = "MetaBtc"
+edition = "2024"
+published-at = "0x0042c1db2eecdd8472aa2464cc3b25b39408ab6d3863bc0e574c7c7910daab09"
+# upgrade-cap = "0xb53324342b27c24e8037080ee9f9b978f37aa92394c9b3300060de91768d2a06"
+
+# [objects]
+# coin-metadata = "0xdbff517529825e6fb8d98b797272ae16d9736e6517d07d8f802aa9faf2b310a0"
+# treasury-cap = "0xb81b7bfb066e477b30c7b637a9a942b84be3a712a44df54c9843f32899d7da5b"
+
+# [types]
+# mbtc = "0x0042c1db2eecdd8472aa2464cc3b25b39408ab6d3863bc0e574c7c7910daab09::mbtc::MBTC"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[addresses]
+mbtc = "0x0042c1db2eecdd8472aa2464cc3b25b39408ab6d3863bc0e574c7c7910daab09"
