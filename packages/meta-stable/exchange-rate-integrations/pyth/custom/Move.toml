@@ -1,0 +1,25 @@
+[package]
+name = "MetaVaultPythIntegrationEth"
+edition = "2024"
+published-at = "0x834394c96ffa45c135a8c1459207ca3282c2db63875da63f46d5fb083eb3d921"
+# upgrade-cap = "0x4012a5b6ff635ad7d0d24565c257345674b7873515d42d3d21ec6f5c0b3d5bcd"
+
+# [objects]
+# singleton [meth] = "0xa5a0760ee516043598dbb3a554200bdacbada38cd2cb1a905285c6ec27bd9ab1"
+# singleton [mbtc] = "0xb9d07934358c0d85d199a98868505ff825ed02d09222d67e7946d1b1ee379b05"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.Pyth]
+git = "git@github.com:unmaykr-aftermath/pyth-crosschain.git"
+subdir = "target_chains/sui/contracts"
+rev = "sui/mainnet"
+
+[addresses]
+meta_vault_pyth_integration_denominated = "0x834394c96ffa45c135a8c1459207ca3282c2db63875da63f46d5fb083eb3d921"

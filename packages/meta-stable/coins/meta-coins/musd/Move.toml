@@ -1,0 +1,20 @@
+[package]
+name = "MetaUsd"
+edition = "2024"
+published-at = "0xe44df51c0b21a27ab915fa1fe2ca610cd3eaa6d9666fe5e62b988bf7f0bd8722"
+# upgrade-cap = "0xe1fe0b1ad75f8bbec624973d7b8ff03137cf13b49c07c429a96ae586204a8979"
+
+# [objects]
+# coin-metadata = "0xc154abd271b24032a2c80d96c1b82109490bb600ed189ef881d8c9467ed44a4f"
+# treasury-cap = "0x187324b052c9314d41339d2a8d1090a8b367259401d545ea5bddac3336305eeb"
+
+# [types]
+# musd = "0xe44df51c0b21a27ab915fa1fe2ca610cd3eaa6d9666fe5e62b988bf7f0bd8722::musd::MUSD"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[addresses]
+musd = "0xe44df51c0b21a27ab915fa1fe2ca610cd3eaa6d9666fe5e62b988bf7f0bd8722"

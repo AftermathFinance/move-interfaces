@@ -1,0 +1,20 @@
+[package]
+name = "MetaVaultLstExchangerateRegistry"
+edition = "2024"
+published-at = "0x546b4c792de9744e08cb89f8f52b25cf5384db0af44f613db6d383234f009bb9"
+# upgrade-cap = "0xb94186b8c0357ca1b254a50e74099204f2227e0cb7f79c47f5e70e64593dd911"
+
+# [objects]
+# publisher = "0x142853ba4d609136e5cfbf0cd38f19d81557c9cfabbfc2f666587af83df9eb16"
+# registry = "0x5ff2396592a20f7bf6ff291963948d6fc2abec279e11f50ee74d193c4cf0bba8"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[addresses]
+meta_vault_lst_exchange_rate_registry = "0x546b4c792de9744e08cb89f8f52b25cf5384db0af44f613db6d383234f009bb9"

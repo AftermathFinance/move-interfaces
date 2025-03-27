@@ -1,0 +1,23 @@
+[package]
+name = "MetaVault"
+edition = "2024"
+published-at = "0x74ecdeabc36974da37a3e2052592b2bc2c83e878bbd74690e00816e91f93a505"
+# upgrade-cap = "0x9c0af68a0eb39bb2a36b52f9eee9b8702d41949a7df59ebab9424d49b91518ac"
+
+# [objects]
+# publisher = "0x2b31f8908f7e3e1011aedc4be1c076270e9bcd00c6ae95a0e0aa13cb939f0a7b"
+# admin-cap = "0xe20bd8c3c5c46eee801979642f60e2901cf2567ec1c884a01e13dc04cf6aa08a"
+# version = "0x4696559327b35ff2ab26904e7426a1646312e9c836d5c6cff6709a5ccc30915c"
+
+# vault [musd] = "0xb950819c5eba1bb5980f714f2a3b1d8738e3da58a4d9daf5fa21b6c2a7dd1e12"
+# vault [meth] = "0x2d6e81126336685a28ea0637109b570510f988bba2b589877c9b579d3cb8cad8"
+# vault [mbtc] = "0x0ff688058077c00a6b6df737e605dbb1fccfb5760246c5d3aaaacc750cb42384"
+# vault [super-sui] = "0x3062285974a5e517c88cf3395923aac788dce74f3640029a01e25d76c4e76f5d"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[addresses]
+meta_vault = "0xca653d2fac70a49549c7ff8792027fa4fa418fd6619954ea0f45d6fd0d081b8e"

@@ -1,0 +1,22 @@
+[package]
+name = "MetaVaultMPoints"
+edition = "2024"
+published-at = "0xc53f5252e70bb34d172dfcdef243eb53678af529affbecc7d0bebedeaedb25bf"
+# upgrade-cap = "0xc8462b386aae6a866002d4b60d3b9979abd76acb0edaacfd967c03b67c24602a"
+
+# [objects]
+# coin-metadata = "0xa06156a85117345cb3fe41146d03fe26d6c45ca16b2bc6771046814f16c60338"
+# treasury-cap = "0x2234b66831687f031f17c53917f7aed63c7528b9193ad145593961c56450065a"
+# admin-cap = "0x513c780a2590d8d5abc27c795f9bc243757501c82a41b14e0c8c597e645f4380"
+# registry = "0xb2174bb5a0b364a535fd60c440d237dcabfc38976d508cb684303eda8a4003b3"
+
+# [types]
+# mpoints = "0x7bae0b3b7b6c3da899fe3f4af95b7110633499c02b8c6945110d799d99deaa68::mpoints::MPOINTS"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[addresses]
+mpoints = "0x7bae0b3b7b6c3da899fe3f4af95b7110633499c02b8c6945110d799d99deaa68"
