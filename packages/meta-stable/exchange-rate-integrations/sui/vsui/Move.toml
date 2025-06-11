@@ -1,0 +1,27 @@
+[package]
+name = "MetaVaultVSuiIntegration"
+edition = "2024"
+published-at = "0xa01948eec945f7a5525d2726537ab1e395553a6e8df519e4f314f6eb4eae3c49"
+# upgrade-cap = "0x814b319fe9541968b969b70117fef6cacb9b6bf6aea6d0b6932165d5809af9e9"
+
+# [objects]
+# singleton [vsui] = "0xea17b737c373464f67724d3abd689825deee1c5f222c715311eac156068b3fba"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.liquid_staking]
+git = "git@github.com:AftermathFinance/move-liquid-staking-derivative-volo.git"
+subdir = "liquid_staking"
+rev = "main"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_vsui_integration = "0xa01948eec945f7a5525d2726537ab1e395553a6e8df519e4f314f6eb4eae3c49"

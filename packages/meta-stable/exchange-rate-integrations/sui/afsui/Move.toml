@@ -1,0 +1,27 @@
+[package]
+name = "MetaVaultSuiIntegration"
+edition = "2024"
+published-at = "0x36304ba033b2929f7664f20264dd4df782c19331d04207904f840064a87a7608"
+# upgrade-cap = "0xb22c8ce1b7cfc15503614aefb5b12c35f6dfea27d8f8b3ec739d0faa16151879"
+
+# [objects]
+# singleton [afsui] = "0xed8944ebfde878a94501526056b34cea4cc22d84d01a0525201d5a346f4c636e"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.AftermathLSD]
+git = "git@github.com:AftermathFinance/liquid-staking-derivative.git"
+subdir = "packages/lsd"
+rev = "mainnet"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_afsui_integration = "0x36304ba033b2929f7664f20264dd4df782c19331d04207904f840064a87a7608"

@@ -274,6 +274,19 @@ public fun create_vault<MetaCoin>(
 
 //******************************************** Getters *******************************************//
 
+public fun size<MetaCoin>(
+    vault: &Vault<MetaCoin>,
+): u64 {
+    vault.metadata.length()
+}
+
+public fun contains<MetaCoin>(
+    vault: &Vault<MetaCoin>,
+    type_name: TypeName,
+): bool {
+    vault.metadata.contains(type_name)
+}
+
 /// Returns the total amount of `Coin<MetaCoin>` that has been minted.
 public fun supply_value<MetaCoin>(
     vault: &Vault<MetaCoin>,
@@ -451,6 +464,26 @@ public fun add_support_for_new_coin_unsafe<MetaCoin, NewCoin>(
     priority: u64,
     decimals: u8,
     ctx: &mut TxContext,
+) {
+    abort 404
+}
+
+// Important: this function is only meant to be called on a `Vault` whose Meta Coin is
+// yield-bearing. If the Meta Coin is supposed to remain stable with respect to another asset,
+// this function would break that assumption.
+//
+/// Deposits the input `Coin<CoinIn>` into the `Vault` and does *not* mint any `MetaCoin`. This
+/// deposit increases the `Vault`'s total liquidity while keeping the `Vault`'s total supply of
+/// `Coin<MetaCoin>` constant -- hence the MetaCoin:BaseAsset exchange rate accrues in value.
+///
+/// Aborts:
+///   i. [meta_vault::version::EInvalidVersion]
+///  ii. [meta_vault::vault::ECoinIsNotSupported]
+public fun add_yield<MetaCoin, CoinIn>(
+    _: &AdminCap,
+    vault: &mut Vault<MetaCoin>,
+    version: &Version,
+    coin_in: Coin<CoinIn>,
 ) {
     abort 404
 }

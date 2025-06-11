@@ -1,7 +1,7 @@
 [package]
 name = "MetaVault"
 edition = "2024"
-published-at = "0x74ecdeabc36974da37a3e2052592b2bc2c83e878bbd74690e00816e91f93a505"
+published-at = "0x0b786daed02d766444787d40e6dc0ab6de169354424cec67be0f424decd9de60"
 # upgrade-cap = "0x9c0af68a0eb39bb2a36b52f9eee9b8702d41949a7df59ebab9424d49b91518ac"
 
 # [objects]
