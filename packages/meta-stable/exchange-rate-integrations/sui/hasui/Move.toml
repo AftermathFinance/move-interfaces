@@ -1,0 +1,27 @@
+[package]
+name = "MetaVaultHaSuiIntegration"
+edition = "2024"
+published-at = "0x07375c056f15ebf6c393b9cc2dad3bb25e445ae071dc80bf4c7ec728cefe2852"
+# upgrade-cap = "0xe0501d6b46f12f9f038591309114cab581c0388ad043c2d8fc0664a8e120b2f9"
+
+# [objects]
+# singleton [hasui] = "0x1b28d8709813ac3fbe6049156f2a93afb80e76b3129bc368498267f261ba8bdd"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.HaedalStakedSui]
+git = "git@github.com:AftermathFinance/move-sui-dapps.git"
+subdir = "hasui"
+rev = "hasui"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_hasui_integration = "0x07375c056f15ebf6c393b9cc2dad3bb25e445ae071dc80bf4c7ec728cefe2852"

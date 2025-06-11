@@ -1,0 +1,32 @@
+[package]
+name = "MetaVaultStSuiIntegration"
+edition = "2024"
+published-at = "0x506e1ca2bff0682708d416fa0aa8e2bed98eb46c5e7a17849511e8eb0aa4f040"
+# upgrade-cap = "0xe9ac5624623911f9ade8caacc3d2618e9d44da40e2ff26f26ab5f8a27abd1f0b"
+
+# [objects]
+# singleton [stsui] = "0xefff1490b45fab40a3b94ace5cbb7a3a30ac64e411a4c376c0a879c0d53059f3"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.liquid_staking]
+git = "git@github.com:AlphaFiTech/liquid-staking.git"
+subdir = "contracts"
+rev = "main"
+
+[dependencies.stsui]
+git = "git@github.com:AlphaFiTech/liquid-staking.git"
+subdir = "stsui"
+rev = "main"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_stsui_integration = "0x506e1ca2bff0682708d416fa0aa8e2bed98eb46c5e7a17849511e8eb0aa4f040"

@@ -1,0 +1,27 @@
+[package]
+name = "MetaVaultSpringSuiIntegration"
+edition = "2024"
+published-at = "0xfd12517a9fc87c6a1f2357ad13b3421fb27a8bd7ca07d5fd5934ac35733baa47"
+# upgrade-cap = "0x879c02121121b94e5d4028903fad7f61e8539f6a0fd6ef7275943d85d81b50ac"
+
+# [objects]
+# singleton [spring-sui] = "0xfcd0b4e326ef281d06fd39626db4f599bc080bafb4c408340f39140356a508c2"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.liquid_staking]
+git = "git@github.com:solendprotocol/liquid-staking.git"
+subdir = "contracts"
+rev = "main"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_spring_sui_integration = "0xfd12517a9fc87c6a1f2357ad13b3421fb27a8bd7ca07d5fd5934ac35733baa47"

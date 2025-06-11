@@ -119,6 +119,23 @@ public(package) fun emit_swap_event<CoinIn, CoinOut>(
     abort 404
 }
 
+//************************************************************************************************//
+// AddYieldEvent                                                                                  //
+//************************************************************************************************//
+
+public struct AddYieldEvent has copy, drop {
+    vault_id: ID,
+    coin_in_type: vector<u8>,
+    coin_in_amount_deposited: u64,
+}
+
+public(package) fun emit_add_yield_event<CoinIn>(
+    vault_id: ID,
+    coin_in_amount_deposited: u64,
+) {
+    abort 404
+}
+
 //***********************************************************************************************//
 // SupportCoinEvent                                                                              //
 //***********************************************************************************************//

@@ -1,0 +1,22 @@
+[package]
+name = "MetaVaultSuiIntegration"
+edition = "2024"
+published-at = "0x8e9aa615cd18d263cfea43d68e2519a2de2d39075756a05f67ae6cee2794ff06"
+# upgrade-cap = "0xd052a851eaac04fa326ee7c8f95139dbd34f4143299bc89c373ccd2f318debde"
+
+# [objects]
+# singleton [sui] = "0x408618719d06c44a12e9c6f7fdf614a9c2fb79f262932c6f2da7621c68c7bcfa"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework/packages/sui-framework"
+rev = "framework/mainnet"
+
+[dependencies.MetaVault]
+local = "../../../meta-vault"
+
+[dependencies.MetaVaultLstExchangerateRegistry]
+local = "../lst-exchange-rate-registry"
+
+[addresses]
+meta_vault_sui_integration = "0x8e9aa615cd18d263cfea43d68e2519a2de2d39075756a05f67ae6cee2794ff06"
