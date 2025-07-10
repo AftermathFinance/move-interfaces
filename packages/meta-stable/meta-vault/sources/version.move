@@ -21,7 +21,7 @@ const EVersionAlreadyCreated: vector<u8> = b"The singleton `Version` has already
 // Constants                                                                                      //
 //************************************************************************************************//
 
-const CURRENT_VERSION: u64 = 2;
+const CURRENT_VERSION: u64 = 3;
 
 //************************************************************************************************//
 // Version                                                                                         //

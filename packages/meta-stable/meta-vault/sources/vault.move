@@ -77,6 +77,13 @@ fun init(witness: VAULT, ctx: &mut TxContext) {
 }
 
 //************************************************************************************************//
+// IsYieldBearingKey                                                                              //
+//************************************************************************************************//
+
+public struct IsYieldBearingKey() has copy, drop, store;
+
+
+//************************************************************************************************//
 // Metadata                                                                                       //
 //************************************************************************************************//
 
@@ -332,6 +339,12 @@ public fun balance_of<MetaCoin, CoinType>(
 public fun priority_of<MetaCoin, CoinType>(
     vault: &Vault<MetaCoin>,
 ): u64 {
+    abort 404
+}
+
+public fun is_yield_bearing<MetaCoin>(
+    vault: &Vault<MetaCoin>,
+): bool {
     abort 404
 }
 
@@ -635,6 +648,17 @@ public fun set_decimals<MetaCoin, CoinType>(
     version: &Version,
     vault: &mut Vault<MetaCoin>,
     new_decimals: u8,
+) {
+    abort 404
+}
+
+
+/// Aborts:
+///   i. [meta_vault::version::EInvalidVersion]
+public fun set_yield_bearing<MetaCoin>(
+    _: &AdminCap,
+    version: &Version,
+    vault: &mut Vault<MetaCoin>,
 ) {
     abort 404
 }
