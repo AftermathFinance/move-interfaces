@@ -1,0 +1,9 @@
+[package]
+name = "AftermathStableMintFactory"
+edition = "2024"
+
+[dependencies.AftermathStableKitchen]
+local = "../../stable-kitchen"
+
+[addresses]
+stable_kitchen_factory = "0x0"

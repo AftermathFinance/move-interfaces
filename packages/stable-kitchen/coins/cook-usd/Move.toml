@@ -1,0 +1,16 @@
+[package]
+name = "AftermathCookUsd"
+edition = "2024"
+published-at = "0x79f2fd93348aae921937431af42e05f6e16491d2a428832b0d55956be7bd7d73"
+# upgrade-cap = "0xe620000f63804fcf7ee751f5632240f543ff386035e9e9e91e8211d087cc8a46"
+
+# [objects]
+# treasury-cap = "0xc9efec86963d476810ae67fed1b7ab7fc058541a1fbddc07946ecb2cd9319668"
+# coin-metadata = "0x31482cfc9a604067d11dccb3eaff96b2a4e99897e3d703648c9f36e972c6b475"
+# create-vault-cap = "0xb4f7dd1a767aa38327569e1414190197de567c72a9bb70f7292e5ea46b3f7295"
+
+[dependencies.AftermathStableKitchen]
+local = "../../stable-kitchen"
+
+[addresses]
+cook_usd = "0x79f2fd93348aae921937431af42e05f6e16491d2a428832b0d55956be7bd7d73"

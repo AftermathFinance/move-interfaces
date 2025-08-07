@@ -1,0 +1,18 @@
+[package]
+name = "AftermathStableKitchen"
+edition = "2024"
+version = "1.1.0"
+published-at = "0x9c74fde1ea61797935b9e534e7eb66d6bf65803aa20cb71423ab9ba5abd22e4b"
+# upgrade-cap = "0x50747a602040427391e69e1061dd14ba6efa85e42395fbf322d2331215aeaf44"
+
+# [objects]
+# publisher = "0x58dc7f0d35eefb7b0920dbdeaa8b88b28dca048ae301dcdea6fd0933892675f7"
+# config = "0xccfa84bc197884df495605c3fe946bf9336b39ec6c522a15d870c89aece3da67"
+# admin-cap = "0x57f2422e15ac66f25f6aa6cdb5ad59f6647bc615583f3779cff2d88afe8f8091"
+
+# [vaults.cook-usd]
+# vault = "0xb713f07d4ab889c0422b435f21f6e5c779c2c5ca4d7626d523be7a5dd1d6bc8a"
+# authority-cap = "0xcd67331ea91bb2eee03b581e03141b2a5c02bf7c9440ad42ca12414868303f4e"
+
+[addresses]
+stable_kitchen = "0x9c74fde1ea61797935b9e534e7eb66d6bf65803aa20cb71423ab9ba5abd22e4b"
