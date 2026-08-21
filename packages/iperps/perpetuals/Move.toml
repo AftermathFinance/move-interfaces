@@ -1,0 +1,31 @@
+[package]
+name = "perpetuals"
+version = "0.0.1"
+edition = "2024"
+license = "BUSL-1.1"
+published-at = "0x3ec740df8428aa9c93aaef7f8cc1542ac3194fd014826b51bfe245346d64efc7"
+# upgrade-cap = "0xc8cc6f87f3a9658a4a779476ce472be8e465a8e899ca46e996a6314af95d1646"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator/oracle-aggregator"
+
+[dependencies.ordered_map]
+local = "../../ordered-map/ordered-map"
+
+[dependencies.control_flow]
+local = "../../control-flow/control-flow"
+
+[dependencies.position]
+local = "../position"
+
+[dependencies.ifixed]
+local = "../../ifixed/ifixed"
+
+[dependencies.authority_cap]
+local = "../../authority-cap/authority-cap"
+
+[dependencies.vendor]
+local = "../../vendor/vendor"
+
+[addresses]
+perpetuals = "0x3ec740df8428aa9c93aaef7f8cc1542ac3194fd014826b51bfe245346d64efc7"

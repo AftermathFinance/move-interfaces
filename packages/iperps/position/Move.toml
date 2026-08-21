@@ -1,0 +1,16 @@
+[package]
+name = "position"
+version = "0.0.1"
+edition = "2024"
+license = "BUSL-1.1"
+published-at = "0x9196fffe0341b2f0ca7424926b22d9e9e35b4807a1f625fc20eeea1382d08dec"
+# upgrade-cap = "0x7016148273eb396d83dd742897934baddbc1d2f1f5a59fdb97462bed94ec364b"
+
+[dependencies.ifixed]
+local = "../../ifixed/ifixed"
+
+[dependencies.control_flow]
+local = "../../control-flow/control-flow"
+
+[addresses]
+position = "0x9196fffe0341b2f0ca7424926b22d9e9e35b4807a1f625fc20eeea1382d08dec"
