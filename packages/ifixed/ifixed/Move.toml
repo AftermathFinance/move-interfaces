@@ -1,0 +1,9 @@
+[package]
+name = "ifixed"
+version = "0.1.0"
+edition = "2024"
+published-at = "0x4b4703a7581781d74a4c7b0fb0836b2a67f34f1a377fb81aab6f5cad29d78760"
+# upgrade-cap = "0x1917a705642a183cba3a1ccef07230260d2fca06ea864c1de313667211f00bed"
+
+[addresses]
+ifixed = "0x4b4703a7581781d74a4c7b0fb0836b2a67f34f1a377fb81aab6f5cad29d78760"
