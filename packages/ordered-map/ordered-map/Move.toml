@@ -1,0 +1,10 @@
+[package]
+name = "AftermathOrderedMap"
+version = "1.0"
+edition = "2024"
+license = "BUSL-1.1"
+published-at = "0xf453864f39b7c6122551f665d4fe961b8625853cf89bcae55be4b3b99e848126"
+# upgrade-cap = "0x0d05a04c86d6f1824306cdf18c8b529d502b7b8b766296ba6dc3d0db5e84fc73"
+
+[addresses]
+ordered_map = "0xf453864f39b7c6122551f665d4fe961b8625853cf89bcae55be4b3b99e848126"
