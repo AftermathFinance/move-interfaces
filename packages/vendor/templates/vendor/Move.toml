@@ -1,0 +1,11 @@
+[package]
+name = "AftermathTemplateVendor"
+version = "0.0.1"
+edition = "2024"
+license = "BUSL-1.1"
+
+[dependencies.vendor]
+local = "../../vendor"
+
+[addresses]
+template = "0x0"

@@ -1,0 +1,13 @@
+[package]
+name = "vendor"
+version = "0.0.1"
+edition = "2024"
+license = "BUSL-1.1"
+published-at = "0x40c958733d43750f9a36f72e2d7a327ef68ce52713f557702b1e784fd7bfa158"
+# upgrade-cap = "0xa536f1bec29265649d83ee66e32b48bebea664882015a25ed87cbfacf9ad36f8"
+
+[dependencies.authority_cap]
+local = "../../authority-cap/authority-cap"
+
+[addresses]
+vendor = "0x40c958733d43750f9a36f72e2d7a327ef68ce52713f557702b1e784fd7bfa158"

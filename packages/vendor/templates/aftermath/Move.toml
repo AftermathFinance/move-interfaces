@@ -1,0 +1,13 @@
+[package]
+name = "AftermathVendorAftermath"
+version = "0.0.1"
+edition = "2024"
+license = "BUSL-1.1"
+published-at = "0x1a6823ed5b853dc99b385767823069c25e134989e8a4a4b3c8f13a184271f786"
+# upgrade-cap = "0x2891feb59bec1fbf6a690550b16934d0c52149d3b516ab6445f05da4772beca6"
+
+[dependencies.vendor]
+local = "../../vendor"
+
+[addresses]
+aftermath = "0x1a6823ed5b853dc99b385767823069c25e134989e8a4a4b3c8f13a184271f786"
