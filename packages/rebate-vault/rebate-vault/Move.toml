@@ -1,0 +1,11 @@
+[package]
+name = "AftermathRebateVault"
+edition = "2024"
+published-at = "0xb1b653022a91d57b82bd151965ca6c8ef4f26b2b2740158e19685a57924d8166"
+# upgrade-cap = "0x20c15bb5578c951b72c5e00ed5a9e4802789d13b6201758707fb15adac5c2062"
+
+[dependencies.authority_cap]
+local = "../../authority-cap/authority-cap"
+
+[addresses]
+rebate_vault = "0xb1b653022a91d57b82bd151965ca6c8ef4f26b2b2740158e19685a57924d8166"
