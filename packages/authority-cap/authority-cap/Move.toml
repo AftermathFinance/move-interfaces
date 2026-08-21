@@ -1,0 +1,8 @@
+[package]
+name = "authority_cap"
+edition = "2024"
+published-at = "0x4e2df80a5e2fd0392878298c51ce15164222111ccea05504b9291b158f552677"
+# upgrade-cap = "0xa5ac1a2ca86e34b811d167e069d66c265dea3d33d094d1c254ee56d95306982d"
+
+[addresses]
+authority_cap = "0x4e2df80a5e2fd0392878298c51ce15164222111ccea05504b9291b158f552677"
