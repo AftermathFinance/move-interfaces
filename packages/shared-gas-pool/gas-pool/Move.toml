@@ -1,0 +1,12 @@
+[package]
+name = "AftermathSharedGasPool"
+edition = "2024.beta"
+license = "BUSL-1.1"
+published-at = "0x1defae9e3c13f8598c1a7012f1be6ae29ebbbaf1a61ee33291e4d97c8cd53016"
+# upgrade-cap = "0xbe8f7cc56e0b940d9b4e30e15dd25fedb93d39ac083731ffdd90244954f06b31"
+
+[dependencies.authority_cap]
+local = "../../authority-cap/authority-cap"
+
+[addresses]
+shared_gas_pool = "0xc04c0827cfad5235292c0002154bbb34a93f4367c4cc740347e75d2e924a10c2"
