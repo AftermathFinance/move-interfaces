@@ -1,0 +1,9 @@
+[package]
+name = "AftermathControlFlow"
+version = "0.1.0"
+edition = "2024"
+published-at = "0xe68e5b2ecf310786e6e7681be6c4a1a7fb9ab314d6a9919704415b835baa2248"
+# upgrade-cap = "0xc2a90c463f70e95ac316188befc9158cf25e5786e4265c4fc19ccd4f1dcb67b0"
+
+[addresses]
+control_flow = "0xe68e5b2ecf310786e6e7681be6c4a1a7fb9ab314d6a9919704415b835baa2248"
