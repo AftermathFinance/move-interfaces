@@ -1,0 +1,26 @@
+[package]
+name = "market_making_vault"
+edition = "2024.alpha"
+version = "0.0.1"
+license = "Apache 2.0"
+authors = ["AftermathFinance"]
+published-at = "0xbab1b714c5533a46ee27a9c124d6f9281ca54831fc288d4d0c133dae3a57254a"
+# upgrade-cap = "0x8a548a5667fead7bc3a064624c9aa25dd8a8afdda37cd2fe8a7c14a01de91aad"
+
+[dependencies.perpetuals]
+local = "../../iperps/perpetuals"
+
+[dependencies.position]
+local = "../../iperps/position"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator/oracle-aggregator"
+
+[dependencies.ifixed]
+local = "../../ifixed/ifixed"
+
+[dependencies.authority_cap]
+local = "../../authority-cap/authority-cap"
+
+[addresses]
+market_making_vault = "0xbab1b714c5533a46ee27a9c124d6f9281ca54831fc288d4d0c133dae3a57254a"

@@ -1,0 +1,9 @@
+[package]
+name = "otw_template"
+edition = "2024.alpha"
+
+[dependencies.market_making_vault]
+local = "../../market-making-vault"
+
+[addresses]
+otw_template = "0x0"

@@ -1,0 +1,11 @@
+[package]
+name = "af_lp"
+edition = "2024.alpha"
+published-at = "0xa57eb8b4d9fce738327bb7be057158710606d8929da280b4d1bf29caf532f479"
+# upgrade-cap = "0x8776e33dab5502c4a93ca4433c0760431bdf57f8696830d4f90624a4ba6d76b4"
+
+[dependencies.market_making_vault]
+local = "../../market-making-vault"
+
+[addresses]
+af_lp = "0xa57eb8b4d9fce738327bb7be057158710606d8929da280b4d1bf29caf532f479"
