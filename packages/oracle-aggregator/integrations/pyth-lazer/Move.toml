@@ -1,0 +1,20 @@
+[package]
+name = "oracle_aggregator_pyth_lazer_integration"
+edition = "2024.alpha"
+version = "0.0.1"
+published-at = "0xa5428da682b4fad53e40f73dc07b547e33be078ec1c5d4a4378d6a316f0d9104"
+# upgrade-cap = "0x342f3812c9130d0ac97ee86b7e4a1a1f4b478303547004fb7a5b3707ccb06638"
+
+[dependencies.pyth_lazer]
+git = "git@github.com:AftermathFinance/pyth-crosschain.git"
+subdir = "lazer/contracts/sui"
+rev = "main"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator"
+
+[dependencies.authority_cap]
+local = "../../../authority-cap/authority-cap"
+
+[addresses]
+oracle_aggregator_pyth_lazer_integration = "0xa5428da682b4fad53e40f73dc07b547e33be078ec1c5d4a4378d6a316f0d9104"

@@ -1,0 +1,20 @@
+[package]
+name = "oracle_aggregator_switchboard_integration"
+edition = "2024.alpha"
+version = "0.0.1"
+published-at = "0x78de9b4ea4730d5d1b1aaea1bcdadc24abdd6474c6b539af2604a3b4ecae75d4"
+# upgrade-cap = "0x16d9a250e096af13d9d1e996614e265f6329ae649f591342ba30cd61e2c25f0a"
+
+[dependencies.switchboard]
+git = "git@github.com:switchboard-xyz/sui.git"
+subdir = "on_demand/"
+rev = "main"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator"
+
+[dependencies.authority_cap]
+local = "../../../authority-cap/authority-cap"
+
+[addresses]
+oracle_aggregator_switchboard_integration = "0x78de9b4ea4730d5d1b1aaea1bcdadc24abdd6474c6b539af2604a3b4ecae75d4"

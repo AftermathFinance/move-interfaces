@@ -1,0 +1,20 @@
+[package]
+name = "oracle_aggregator_stork_integration"
+edition = "2024.alpha"
+version = "0.0.1"
+published-at = "0xfee3ac6f89dbac69c9bab1f52164d9ace4e107fb351d653a2df87e9ce18bda05"
+# upgrade-cap = "0x925dd58295026227b691798065860fd1d27f04b41d6b2c9fc0365d70715705b4"
+
+[dependencies.stork]
+git = "git@github.com:Stork-Oracle/stork-external.git"
+subdir = "chains/sui/contracts"
+rev = "main"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator"
+
+[dependencies.authority_cap]
+local = "../../../authority-cap/authority-cap"
+
+[addresses]
+oracle_aggregator_stork_integration = "0xfee3ac6f89dbac69c9bab1f52164d9ace4e107fb351d653a2df87e9ce18bda05"

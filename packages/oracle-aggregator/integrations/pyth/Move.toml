@@ -1,0 +1,20 @@
+[package]
+name = "oracle_aggregator_pyth_integration"
+edition = "2024.alpha"
+version = "0.0.1"
+published-at = "0x473fa6a0d1b36c193a3418f5fd070baa57f8e035585e63bcd33898ecba03c711"
+# upgrade-cap = "0x86049b528f1f35423630520c83dd386aaa833ebe5dfd95cc5f1eed2a57eb99d4"
+
+[dependencies.pyth]
+git = "git@github.com:AftermathFinance/pyth-crosschain.git"
+subdir = "target_chains/sui/contracts"
+rev = "main"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator"
+
+[dependencies.authority_cap]
+local = "../../../authority-cap/authority-cap"
+
+[addresses]
+oracle_aggregator_pyth_integration = "0x473fa6a0d1b36c193a3418f5fd070baa57f8e035585e63bcd33898ecba03c711"

@@ -1,0 +1,15 @@
+[package]
+name = "oracle_aggregator_dev_integration"
+edition = "2024"
+version = "0.0.1"
+published-at = "0xa05f42e5b0dc07e1a22aa5a4fa2d7bfda830b6703f442dce6ba4e0e4f1789b4b"
+# upgrade-cap = "0xdafe9dc65b65cabd57539a4b984342b6dfad316d07e524e8780234b91bba2fa2"
+
+[dependencies.oracle_aggregator]
+local = "../../oracle-aggregator"
+
+[dependencies.authority_cap]
+local = "../../../authority-cap/authority-cap"
+
+[addresses]
+oracle_aggregator_dev_integration = "0xa05f42e5b0dc07e1a22aa5a4fa2d7bfda830b6703f442dce6ba4e0e4f1789b4b"
