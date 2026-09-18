@@ -29,10 +29,10 @@ const ZERO: u64 = 0;
 #[error]
 const ECointypeNotRegistered: vector<u8> = b"The specified `CoinType` does not have an exchange rate stored within the `Registry`.";
 
-#[error]
+#[error(code = 1)]
 const EMustRegisterFirst: vector<u8> = b"The specified `CoinType` is not tracked by the `Registry`. An `AdminCap` must call `register_exchange_rate` before rates can be updated.";
 
-#[error]
+#[error(code = 2)]
 const ECannotRemoveSui: vector<u8> = b"`SUI` is the `Registry`'s base denomination and cannot be removed.";
 
 //************************************************************************************************//
@@ -158,7 +158,7 @@ public fun update_exchange_rate<CoinType>(
 //****************************** Mutators [Permissioned] [AdminCap] ******************************//
 
 /// Register or update the `exchange_rate` for `CoinType` within `Registry`.
-/// Only the `AdminCap` holder can append a new `CoinType` to `types`.
+/// Possession of `AdminCap` is the authority; this is the only path that may append to `types`.
 /// If `CoinType` is already tracked, this updates the stored rate.
 public fun register_exchange_rate<CoinType>(
     _: &AdminCap,

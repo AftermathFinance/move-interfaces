@@ -141,6 +141,8 @@ public fun register_exchange_rate(
 /// `Registry`'s `register_exchange_rate`. This function shoould be favored over
 /// `add_support_for_new_coin` directly to safely initialize the `Registry` too. See the
 /// documentation for `add_support_for_new_coin` and `register_exchange_rate` for more info.
+/// The unused wrapper parameter is retained so the published function signature stays
+/// upgrade-compatible.
 ///
 /// Aborts:
 ///   i. [meta_vault::version::EInvalidVersion]
