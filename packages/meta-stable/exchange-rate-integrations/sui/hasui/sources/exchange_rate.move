@@ -111,9 +111,12 @@ public fun create_withdraw_cap<MetaCoin>(
 //************************************************************************************************//
 
 /// Query the `haSUI:SUI` exchange rate from the `haSUI` package and set it within the `Registry`.
+/// Only refreshes rates for types that are already registered; first-time registration must
+/// go through `register_exchange_rate`.
 ///
 /// Aborts:
 ///    i. [meta_vault::admin::ENotAuthorized]
+///   ii. [meta_vault_lst_exchange_rate_registry::registry::EMustRegisterFirst]
 public fun update_exchange_rate(
     wrapper: &MetaVaultHaSuiIntegration,
     registry: &mut Registry,
@@ -122,16 +125,28 @@ public fun update_exchange_rate(
     abort 404
 }
 
+/// Admin-gated first-time (or repair) registration of `HASUI` in the `Registry`. Unlike
+/// `update_exchange_rate`, this may append `HASUI` to `registry.types`.
+public fun register_exchange_rate(
+    admin_cap: &AdminCap,
+    registry: &mut Registry,
+    staked_sui_vault: &Staking,
+) {
+    abort 404
+}
+
 /// This is a helper function that wraps the `Vault`'s `add_support_for_new_coin` + the
-/// `Registry`'s `update_exchange_rate`. This function shoould be favored over
+/// `Registry`'s `register_exchange_rate`. This function shoould be favored over
 /// `add_support_for_new_coin` directly to safely initialize the `Registry` too. See the
-/// documentation for `add_support_for_new_coin` and `update_exchange_rate` for more info.
+/// documentation for `add_support_for_new_coin` and `register_exchange_rate` for more info.
+/// The unused wrapper parameter is retained so the published function signature stays
+/// upgrade-compatible.
 ///
 /// Aborts:
 ///   i. [meta_vault::version::EInvalidVersion]
 ///  ii. [meta_vault::version::EAlreadySupported]
 public fun add_support_for_new_coin<MetaCoin>(
-    wrapper: &MetaVaultHaSuiIntegration,
+    _wrapper: &MetaVaultHaSuiIntegration,
     admin_cap: &AdminCap,
     version: &Version,
     vault: &mut Vault<MetaCoin>,

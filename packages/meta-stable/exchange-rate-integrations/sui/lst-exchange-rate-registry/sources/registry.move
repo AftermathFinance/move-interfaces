@@ -8,6 +8,7 @@ module meta_vault_lst_exchange_rate_registry::registry;
 use meta_vault::math::exchange_rate_one_to_one as exchange_rate_scaling_factor;
 use meta_vault::math::exchange_rate_one_to_one as sui_to_sui_exchange_rate;
 use meta_vault::vault::Vault;
+use meta_vault::admin::AdminCap;
 
 use sui::package::claim_and_keep as claim_package;
 use sui::table::Table;
@@ -27,6 +28,12 @@ const ZERO: u64 = 0;
 
 #[error]
 const ECointypeNotRegistered: vector<u8> = b"The specified `CoinType` does not have an exchange rate stored within the `Registry`.";
+
+#[error(code = 1)]
+const EMustRegisterFirst: vector<u8> = b"The specified `CoinType` is not tracked by the `Registry`. An `AdminCap` must call `register_exchange_rate` before rates can be updated.";
+
+#[error(code = 2)]
+const ECannotRemoveSui: vector<u8> = b"`SUI` is the `Registry`'s base denomination and cannot be removed.";
 
 //************************************************************************************************//
 // Package Init                                                                                   //
@@ -134,14 +141,42 @@ public fun meta_coin_to_sui_exchange_rate<MetaCoin>(
 
 //***************************** Mutators [Permissioned] [Object Auth] ****************************//
 
-/// Update the `exchange_rate` for `CoinType` within `Registry`.
+/// Update the `exchange_rate` for an **already registered** `CoinType` within `Registry`.
+/// This does **not** append new types; first-time registration requires `register_exchange_rate`.
 ///
 /// Aborts:
 ///    i. [meta_vault::admin::ENotAuthorized]
+///   ii. [meta_vault_lst_exchange_rate_registry::registry::EMustRegisterFirst]
 public fun update_exchange_rate<CoinType>(
     id: &UID,
     registry: &mut Registry,
     exchange_rate: u128,
+) {
+    abort 404
+}
+
+//****************************** Mutators [Permissioned] [AdminCap] ******************************//
+
+/// Register or update the `exchange_rate` for `CoinType` within `Registry`.
+/// Possession of `AdminCap` is the authority; this is the only path that may append to `types`.
+/// If `CoinType` is already tracked, this updates the stored rate.
+public fun register_exchange_rate<CoinType>(
+    _: &AdminCap,
+    registry: &mut Registry,
+    exchange_rate: u128,
+) {
+    abort 404
+}
+
+/// Remove `CoinType` from `exchange_rates` and `types`. Used to repair a poisoned `Registry`.
+/// `SUI` cannot be removed: it is the base denomination initialized in `create`.
+///
+/// Aborts:
+///    i. [meta_vault_lst_exchange_rate_registry::registry::ECannotRemoveSui]
+///   ii. [meta_vault_lst_exchange_rate_registry::registry::ECointypeNotRegistered]
+public fun remove_exchange_rate<CoinType>(
+    _: &AdminCap,
+    registry: &mut Registry,
 ) {
     abort 404
 }
@@ -154,6 +189,9 @@ use fun calculate_current_liquidity_denominated_in_sui
     as Vault.calculate_current_liquidity_denominated_in_sui;
 /// Calculate the `Vault`'s TVL after converted to SUI. This is calculated by applying the
 /// `CoinType`:SUI exchange rate on all of the `Vault`'s assets.
+///
+/// Registry types that the `Vault` does not support contribute 0 rather than aborting. This
+/// prevents a poisoned `registry.types` entry from freezing deposit/withdraw/swap.
 public fun calculate_current_liquidity_denominated_in_sui<MetaCoin>(
     vault: &Vault<MetaCoin>,
     registry: &Registry,
