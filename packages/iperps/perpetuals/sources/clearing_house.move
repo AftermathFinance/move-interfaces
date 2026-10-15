@@ -609,6 +609,7 @@ public fun create_clearing_house_with_currency<T, VendorKey, ADMIN_OR_ASSISTANT>
 }
 
 #[lint_allow(share_owned)]
+#[deprecated(note = b"Reserved for direct PTB calls. Modules must not share the clearing house: return it to the caller instead, so the transaction stays composable.")]
 public fun share<T>(ch: ClearingHouse<T>) {
     abort 404
 }
